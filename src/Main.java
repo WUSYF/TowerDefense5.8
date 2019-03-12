@@ -4,7 +4,8 @@ public class Main extends PApplet
 {
 
     public static void main(String[] args) {
-        PApplet.main("Main.Main");
+        System.out.println("starting");
+        PApplet.main("Main");
     }
 
     //global Variables
@@ -33,17 +34,18 @@ public class Main extends PApplet
             for (int j = 0; j < height; j++) {
                 switch(lvl.getFields()[i][j]){
                     case 0:
-                        drawItem("tower1", i,j);
+                        //drawItem("tower1", i,j);
                         break;
                     case 1:
-                        drawItem("troop1", i,j);
+                        //todo: draw Item
+                        //drawItem("troop1", i,j);
                         break;
                 }
             }
         }
 
     }
-    public void drawGrid(int x, int y)
+    public void drawGrid(int x, int y) //x,y: how many Fields does the current lvl have?
     {
         int xFrequ = widthProj/x;
         int yFrequ = heightProj/y;
@@ -58,6 +60,34 @@ public class Main extends PApplet
         }
     }
 
+    /*drawItem: draws a specific item at the field x,y in a lvl
+    drawGrid for the current lvl has to be executed before
+    */
+    public void drawItem(Tower tower, int x, int y)
+    {
+
+    }
+
+    public void drawItem(Troop troop, int x, int y)
+    {
+
+    }
+
+    public void drawItem(int fieldType, int x, int y)
+    {
+        //0: tower field; 1: troop field
+        switch (fieldType)
+        {
+            case 0:
+                fill(0,150,0);
+                //rect();
+                break;
+            case 1:
+                fill(125);
+                //rect();
+                break;
+        }
+    }
     public void drawItem(String type, int x, int y){
         switch (type){
             //TODO: rects richtig Zeichnen
